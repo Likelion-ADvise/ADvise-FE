@@ -2,6 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
+const WrapContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 450vh;
+  padding-bottom: 50px;
+  flex-grow: 1;
+`;
+
 const FormContainer = styled.div`
   width: 100%;
   padding: 10px;
@@ -71,12 +79,12 @@ const AuctionList = ({ id, image, title, minimum_price, content }) => {
     <FormContainer onClick={handleClick}>
       <Image src={image} />
       <ContentWrapper>
-        <Title>제목: {title}</Title>
+        <Title>{title}</Title>
         <MinimumPrice>최저: {minimum_price} ₩</MinimumPrice>
-        <Content>내용: {content}</Content>
+        <Content>{content}</Content>
       </ContentWrapper>
     </FormContainer>
   );
 };
 
-export default AuctionList;
+export { WrapContainer, AuctionList };
